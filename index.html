@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mango Cards</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .product__item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .product__item__pic {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product__item__text {
+            padding: 15px;
+        }
+
+        .product__item__text h5 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .product__item__details {
+            font-size: 0.9em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .product__item__details p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
+    <div class="container  mt-5">
+
+        <div class="row" id="lime">
+        </div>
+        <div class="row" id="mango">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./data.js"></script>
+    <script>
+
+const limeContainer = document.querySelector('#lime');
+limeData.forEach(lime => {
+    const limeItem = `
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="product__item">
+            <a href="./anime-details.html?limeId=${lime.id}"></a>
+                <div class="product__item__pic" style="background-image: url(${lime.image});"></div>
+                <div class="product__item__text">
+                    <h5 class="title">${lime.name}</h5>
+                    <div class="product__item__details">
+                        <p><strong>ID:</strong> ${lime.id}</p>
+                        <p><strong>Species:</strong> ${lime.species}</p>
+                        <p><strong>Type:</strong> ${lime.type}</p>
+                        <p><strong>Category:</strong> ${lime.category}</p>
+                        <p><strong>Sunlight:</strong> ${lime.sunlight}</p>
+                        <p><strong>Water:</strong> ${lime.water}</p>
+                        <p><strong>Soil:</strong> ${lime.soil}</p>
+                        <p><strong>Growth Rate:</strong> ${lime.growthRate}</p>
+                        <p><strong>Origin:</strong> ${lime.origin}</p>
+                        <p><strong>Generation:</strong> ${lime.generation}</p>
+                        <p><strong>Description:</strong> ${lime.description}</p>
+                        <p><strong>Price:</strong> ${lime.Price}</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    `;
+    limeContainer.innerHTML += limeItem;
+}); 
     
+
+
+        const mangoContainer = document.querySelector('#mango');
+        mangoData.forEach(mango => {
+            const mangoItem = `
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="product__item">
+                    <a href="./anime-details.html?mangoId=${mango.id}"></a>
+                        <div class="product__item__pic" style="background-image: url(${mango.image});"></div>
+                        <div class="product__item__text">
+                            <h5 class="title">${mango.name}</h5>
+                            <div class="product__item__details">
+                                <p><strong>ID:</strong> ${mango.id}</p>
+                                <p><strong>Species:</strong> ${mango.species}</p>
+                                <p><strong>Type:</strong> ${mango.type}</p>
+                                <p><strong>Category:</strong> ${mango.category}</p>
+                                <p><strong>Sunlight:</strong> ${mango.sunlight}</p>
+                                <p><strong>Water:</strong> ${mango.water}</p>
+                                <p><strong>Soil:</strong> ${mango.soil}</p>
+                                <p><strong>Growth Rate:</strong> ${mango.growthRate}</p>
+                                <p><strong>Origin:</strong> ${mango.origin}</p>
+                                <p><strong>Generation:</strong> ${mango.generation}</p>
+                                <p><strong>Description:</strong> ${mango.description}</p>
+                                <p><strong>Price:</strong> ${mango.Price}</p>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            `;
+            mangoContainer.innerHTML += mangoItem;
+        });
+    </script>
 </body>
 </html>
